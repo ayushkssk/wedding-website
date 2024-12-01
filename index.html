@@ -45,6 +45,11 @@
             font-size: 42px;
             margin-bottom: 20px;
             font-family: 'Great Vibes', cursive;
+            background: linear-gradient(45deg, #d4af37, #8B4513, #d4af37);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: titleGradient 6s infinite;
         }
 
         .countdown {
@@ -159,6 +164,11 @@
             font-size: 32px;
             color: #d4af37;
             margin: 15px 0;
+            background: linear-gradient(45deg, #d4af37, #8B4513);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
         }
 
         .person-desc {
@@ -211,6 +221,11 @@
             color: #d4af37;
             font-size: 36px;
             margin-bottom: 20px;
+            background: linear-gradient(45deg, #8B4513, #d4af37);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
         }
 
         .svg-divider {
@@ -281,6 +296,11 @@
             color: var(--accent-color);
             font-size: 20px;
             margin: 10px 0;
+            background: linear-gradient(45deg, #8B4513, #d4af37);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
         }
 
         .family-relation {
@@ -763,6 +783,115 @@
                 height: 150px;
             }
         }
+
+        /* Gradient text for main title */
+        h1 {
+            background: linear-gradient(45deg, #d4af37, #8B4513, #d4af37);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: titleGradient 6s infinite;
+        }
+
+        /* Colorful names in couple section */
+        .person-name {
+            background: linear-gradient(45deg, #d4af37, #8B4513);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+        /* Story title gradient */
+        .story-title {
+            background: linear-gradient(45deg, #8B4513, #d4af37);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+        /* Countdown styling */
+        .countdown h2 {
+            color: #8B4513;
+            font-family: 'Great Vibes', cursive;
+            font-size: 32px;
+        }
+
+        .countdown-number {
+            background: linear-gradient(45deg, #d4af37, #8B4513);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            font-size: 28px;
+        }
+
+        /* Family section names */
+        .family-name {
+            background: linear-gradient(45deg, #8B4513, #d4af37);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+        .family-relation {
+            color: #8B4513;
+            font-weight: 500;
+        }
+
+        /* Animation for title gradient */
+        @keyframes titleGradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Love Story text styling */
+        .story-section p {
+            color: #8B4513;
+            font-size: 18px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+
+        /* Person description styling */
+        .person-desc {
+            color: #8B4513;
+            font-weight: 500;
+        }
+
+        .person-desc span {
+            background: linear-gradient(45deg, #d4af37, #8B4513);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+        /* RSVP section styling */
+        .rsvp-section h2 {
+            background: linear-gradient(45deg, #8B4513, #d4af37);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+        /* Make text gradient work better on different browsers */
+        @supports not (background-clip: text) {
+            h1, .person-name, .story-title, .family-name {
+                background: none;
+                color: #d4af37;
+            }
+        }
     </style>
 </head>
 <body>
@@ -797,9 +926,7 @@
 
         <div class="story-section">
             <h2 class="story-title">Our Love Story</h2>
-            <p>We met on a sunny afternoon at Central Park, 
-               where fate brought us together through a chance encounter. 
-               Since that magical day, our love has grown stronger with each passing moment.</p>
+            <p>We brought together through an arranged marriage, a union carefully planned by their families. Since the day they met, their connection has blossomed into a beautiful bond, growing stronger with each moment.</p>
         </div>
 
         <section class="family-section animate__animated animate__fadeIn">
