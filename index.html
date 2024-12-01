@@ -121,7 +121,8 @@
         .person-card {
             width: 300px;
             text-align: center;
-            background: white;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(5px);
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
@@ -546,6 +547,11 @@
                 padding: 10px;
             }
         }
+
+        .person-desc span {
+            color: var(--accent-color);
+            font-size: 0.9em;
+        }
     </style>
 </head>
 <body>
@@ -557,10 +563,14 @@
         <div class="couple-section">
             <div class="person-card">
                 <div class="photo-frame">
-                    <img src="groom.jpg" alt="Ranjeet Snghh" />
+                    <img src="groom.png" alt="Ranjeet Singh" 
+                         style="object-position: center top;" />
                 </div>
-                <h3 class="person-name">Ranjeet Snghh</h3>
-                <p class="person-desc">Son of Mr. & Mrs. Snghh<br>Software Engineer at Tech Corp</p>
+                <h3 class="person-name">Ranjeet Singh</h3>
+                <p class="person-desc">
+                    Son of Mr. & Mrs. Singh<br>
+                    <span style="font-style: italic;">A Gentleman with Grace</span>
+                </p>
             </div>
 
             <div class="heart-divider">♥</div>
