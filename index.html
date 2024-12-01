@@ -988,9 +988,8 @@
         </button>
         <div class="qr-modal" id="qrModal">
             <div class="qr-content">
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://ayushkssk.github.io/wedding-website/" 
-                     alt="QR Code" id="qrCode">
-                <p>Scan to download invitation</p>
+                <img src="qr.png" alt="QR Code" id="qrCode">
+                <p>Scan to view invitation</p>
                 <button class="download-btn" onclick="downloadQR()">
                     <i class="fas fa-download"></i> Download QR
                 </button>
@@ -1038,29 +1037,30 @@
             }
         }, 1000);
 
+        function downloadQR() {
+            const popup = document.getElementById('downloadPopup');
+            popup.style.display = 'flex';
+        }
+
+        function confirmDownload() {
+            const link = document.createElement('a');
+            link.href = 'qr.png';  // Use local QR image
+            link.download = 'QRcode.png';  // Changed filename
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            closePopup();
+        }
+
+        function closePopup() {
+            const popup = document.getElementById('downloadPopup');
+            popup.style.display = 'none';
+        }
+
         function toggleQR() {
             const modal = document.getElementById('qrModal');
             modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
         }
-
-        function downloadQR() {
-            const qrImage = document.getElementById('qrCode');
-            const link = document.createElement('a');
-            link.href = qrImage.src;
-            link.download = 'wedding-invitation-qr.png';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-        }
-
-        // Close QR modal when clicking outside
-        document.addEventListener('click', function(event) {
-            const modal = document.getElementById('qrModal');
-            const qrButton = document.querySelector('.qr-button');
-            if (!modal.contains(event.target) && event.target !== qrButton) {
-                modal.style.display = 'none';
-            }
-        });
     </script>
 </body>
 </html>
