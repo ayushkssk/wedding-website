@@ -892,6 +892,21 @@
                 color: #d4af37;
             }
         }
+
+        .countdown-number {
+            transition: all 0.3s ease;
+            min-width: 60px;
+            display: inline-block;
+        }
+
+        .countdown-item {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
     </style>
 </head>
 <body>
@@ -953,7 +968,7 @@
         </section>
 
         <div class="countdown">
-            <h2>Countdown to the Big Day</h2>
+            <h2>Countdown to Our Special Day</h2>
             <div class="countdown-timer">
                 <div class="countdown-item">
                     <div class="countdown-number" id="days">00</div>
@@ -1013,27 +1028,35 @@
     </div>
 
     <script>
-        // Set the wedding date (update this to match your invitation)
-        const weddingDate = new Date('June 25, 2024 16:00:00').getTime();
+        // Set the wedding date - Month is 0-based (0-11), so March is 2
+        const weddingDate = new Date(2025, 2, 10, 0, 0, 0).getTime();
 
         // Update countdown every second
         const countdown = setInterval(function() {
             const now = new Date().getTime();
             const distance = weddingDate - now;
 
+            // Calculate time units
             const days = Math.floor(distance / (1000 * 60 * 60 * 24));
             const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
+            // Add leading zeros
             document.getElementById('days').innerHTML = String(days).padStart(2, '0');
             document.getElementById('hours').innerHTML = String(hours).padStart(2, '0');
             document.getElementById('minutes').innerHTML = String(minutes).padStart(2, '0');
             document.getElementById('seconds').innerHTML = String(seconds).padStart(2, '0');
 
+            // When countdown is over
             if (distance < 0) {
                 clearInterval(countdown);
-                document.querySelector('.countdown').innerHTML = "The Wedding Day Has Arrived!";
+                document.querySelector('.countdown').innerHTML = `
+                    <h2 style="color: var(--primary-color);">
+                        The Wedding Day Has Arrived!
+                        <br>
+                        <span style="font-size: 24px;">❤️</span>
+                    </h2>`;
             }
         }, 1000);
 
