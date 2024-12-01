@@ -256,18 +256,25 @@
         }
 
         .family-photo {
-            width: 120px;
-            height: 120px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             margin: 0 auto 15px;
             border: 3px solid var(--primary-color);
             overflow: hidden;
+            position: relative;
         }
 
         .family-photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .family-card:first-child .family-photo img {
+            object-position: center;
+            transform: scale(1.1);
         }
 
         .family-name {
@@ -552,6 +559,23 @@
             color: var(--accent-color);
             font-size: 0.9em;
         }
+
+        .family-section .story-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .family-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .family-grid {
+            justify-content: center;
+            margin: 0 auto;
+            max-width: 800px;
+        }
     </style>
 </head>
 <body>
@@ -592,20 +616,21 @@
         </div>
 
         <section class="family-section animate__animated animate__fadeIn">
-            <h2 class="story-title">Our Beloved Family</h2>
+            <h2 class="story-title" style="text-align: center;">Our Beloved Family</h2>
             <div class="family-grid">
                 <!-- Parents -->
                 <div class="family-card">
                     <div class="family-photo">
-                        <img src="https://source.unsplash.com/random/200x200/?elderly-couple" alt="Snghh Parents">
+                        <img src="parentg.png" alt="Singh Parents" 
+                             style="object-position: center; object-fit: cover;">
                     </div>
-                    <h3 class="family-name">Mr. & Mrs. Snghh</h3>
+                    <h3 class="family-name">Mr. & Mrs. Singh</h3>
                     <p class="family-relation">Parents of the Groom</p>
                 </div>
 
                 <div class="family-card">
                     <div class="family-photo">
-                        <img src="https://source.unsplash.com/random/200x200/?elderly-couple" alt="Doe Parents">
+                        <img src="bride-parents.jpg" alt="Doe Parents">
                     </div>
                     <h3 class="family-name">Mr. & Mrs. Doe</h3>
                     <p class="family-relation">Parents of the Bride</p>
