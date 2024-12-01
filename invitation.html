@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f9f3f3;
+            font-family: 'Cormorant Garamond', serif;
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .invitation-card {
+            background-color: white;
+            padding: 50px;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            position: relative;
+            border: 1px solid #e8c5c5;
+        }
+
+        .border-design {
+            border: 2px solid #d4af37;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            right: 20px;
+            bottom: 20px;
+            pointer-events: none;
+        }
+
+        h1 {
+            color: #d4af37;
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: normal;
+        }
+
+        .names {
+            font-size: 48px;
+            color: #333;
+            margin: 30px 0;
+            font-family: 'Great Vibes', cursive;
+        }
+
+        .date-time {
+            font-size: 24px;
+            color: #666;
+            margin: 20px 0;
+        }
+
+        .location {
+            font-size: 20px;
+            color: #888;
+            margin: 20px 0;
+        }
+
+        .rsvp {
+            margin-top: 40px;
+            color: #d4af37;
+            font-size: 18px;
+        }
+
+        .ornament {
+            color: #d4af37;
+            font-size: 24px;
+            margin: 20px 0;
+        }
+
+        .exit-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(212, 175, 55, 0.9);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .exit-button:hover {
+            background: rgba(212, 175, 55, 1);
+            transform: scale(1.05);
+        }
+
+        .exit-button i {
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .exit-button {
+                top: 10px;
+                right: 10px;
+                padding: 8px 15px;
+                font-size: 14px;
+            }
+        }
+
+        /* Responsive styles for invitation */
+        @media screen and (max-width: 992px) {
+            .invitation-card {
+                padding: 30px;
+                margin: 20px;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            .names {
+                font-size: 40px;
+            }
+
+            .date-time {
+                font-size: 20px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+
+            .invitation-card {
+                padding: 25px;
+                margin: 15px;
+            }
+
+            .border-design {
+                top: 15px;
+                left: 15px;
+                right: 15px;
+                bottom: 15px;
+            }
+
+            h1 {
+                font-size: 28px;
+                margin-bottom: 15px;
+            }
+
+            .names {
+                font-size: 36px;
+                margin: 20px 0;
+            }
+
+            .date-time {
+                font-size: 18px;
+                margin: 15px 0;
+            }
+
+            .location {
+                font-size: 18px;
+            }
+
+            .rsvp {
+                margin-top: 30px;
+                font-size: 16px;
+            }
+
+            .ornament {
+                font-size: 20px;
+                margin: 15px 0;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            body {
+                padding: 10px;
+            }
+
+            .invitation-card {
+                padding: 20px;
+                margin: 10px;
+            }
+
+            .border-design {
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .names {
+                font-size: 32px;
+                margin: 15px 0;
+            }
+
+            .date-time {
+                font-size: 16px;
+            }
+
+            .location {
+                font-size: 16px;
+            }
+
+            .rsvp {
+                font-size: 14px;
+            }
+
+            .exit-button {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+        }
+
+        /* Print Media Query */
+        @media print {
+            .exit-button {
+                display: none;
+            }
+
+            .invitation-card {
+                box-shadow: none;
+                margin: 0;
+                padding: 20px;
+            }
+
+            body {
+                background: white;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button onclick="window.location.href='index.html'" class="exit-button">
+        <i class="fas fa-arrow-left"></i> Back to Main
+    </button>
+    <div class="invitation-card">
+        <div class="border-design"></div>
+        <div class="ornament">❦</div>
+        <h1>Together with their families</h1>
+        
+        <div class="names">
+            John Smith
+            <br>&amp;<br>
+            Jane Doe
+        </div>
+
+        <p>request the pleasure of your company<br>
+        at the celebration of their marriage</p>
+
+        <div class="date-time">
+            Saturday, the Twenty-Fifth of June<br>
+            Two Thousand and Twenty-Four<br>
+            at Four O'Clock in the Evening
+        </div>
+
+        <div class="location">
+            The Grand Palace<br>
+            123 Wedding Avenue<br>
+            New York, NY 10001
+        </div>
+
+        <div class="rsvp">
+            R.S.V.P.<br>
+            (555) 123-4567<br>
+            rsvp@wedding.com
+        </div>
+        
+        <div class="ornament">❦</div>
+    </div>
+</body>
+</html> 
